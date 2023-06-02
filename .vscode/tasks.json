@@ -6,42 +6,15 @@
             "type": "shell",
             "command": "g++",
             "args": [
-                "-c",
+                "-o",
+                "${workspaceFolder}/main.exe",
                 "${workspaceFolder}/src/main.cpp",
-                "-I",
-                "${workspaceFolder}/include",
-                "-DSFML_STATIC"
+                "-lXinput"
             ],
             "group": {
                 "kind": "build",
                 "isDefault": true
             }
-        },
-        {
-            "label": "Link",
-            "type": "shell",
-            "command": "g++",
-            "args": [
-                "${workspaceFolder}/main.o",
-                "-o",
-                "${workspaceFolder}/main",
-                "-L",
-                "${workspaceFolder}/lib",
-                "-lsfml-graphics-s",
-                "-lsfml-window-s",
-                "-lsfml-system-s",
-                "-lsfml-audio-s",
-                "-lopengl32",
-                "-lfreetype",
-                "-lwinmm",
-                "-lgdi32",
-                "-mwindows"
-            ],
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            },
-            "dependsOn": ["Build"]
         }
     ]
 }
